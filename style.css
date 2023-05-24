@@ -1,0 +1,104 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
+.statement{
+  width: 50%;
+  text-align: left;
+  line-height: 18pt;
+}
+.aboutMe{
+  width: 80%;
+  text-align: center;
+  line-height: 18pt;
+  padding-left: 10%;
+}
+.eduBackground{
+  width: 80%;
+  text-align: center;
+  line-height: 18pt;
+  padding-left: 10%;
+}
+.portfolio{
+  width: 80%;
+  text-align: center;
+  line-height: 18pt;
+  padding-left: 10%;
+}
+
+
+/* mainpage */
+
+.container{
+  display: inline-block;
+  padding-top: 12.5%;
+  padding-left: 28%;
+}
+
+.text{
+
+  font-size: 5em;
+  letter-spacing: 10px;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+      typing 2s,
+      cursor .4s step-end infinite alternate;
+      
+}
+
+.btn{
+  padding-left: 33%;
+}
+.startBtn{
+  cursor: pointer;
+  font-family: monospace;
+  border-right: 5px solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-color: black;
+  font-size: 20px;
+  animation: 
+      cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor{
+  50% {border-color: transparent}
+
+}
+
+@keyframes typing {
+  from {width:0}
+}
+
+/*homepage*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  font-weight:Bold;
+  letter-spacing: 3px;
+  font-family: monospace;
+  font-size: 25px;
+  padding: 14px 16px;
+  text-decoration: none;
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage</title>
+	<link href="style2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	
+	<div>
+		<ul>
+			<li style="float:right"><a href="#home"><img src="pic/email.jpg" width="30px"></a></li>
+		  	<li style="float:right"><a href="#home"><img src="pic/linkedin.jpg" width="30px"></a></li>
+		  	<li style="float:right"><a href="#home"><img src="pic/instagram.jpg" width="30px"></a></li>
+		  	<li><a href="main.html">PORTFOLIO</a></li>
+		  
+		  
+		</ul>
+	</div>
+	<div class="content">
+		<div class="border1">
+			<a  class="aboutMe" href="#popup1"><img src="pic/me.png" width="140px"><br>About Me<br>
+		</div>
+		<br>
+		<div class="border2">
+			<a class="Edu"href="#popup2"><img src="pic/edu.png" width="140px"><br>Education Background
+		</div>
+		<br>
+		<div class="border3">
+			<a class="project" href="#popup4"><img src="pic/project.png" width="140px"><br>Project
+		</div>
+		
+	</div>
+
+	<div id="popup1" class="overlay">
+		<div class="popup">
+			<h2>About Me</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+				<div class="slideshow-container">
+
+					<div class="mySlides fade">
+					  <div class="numbertext">1 / 2</div>
+					  <img src="pic/me2.jpg" style="width:40%">
+					</div>
+					<div><p>Hello, I'm Nashirah and currently pursuing my study in Software Engineering at UMP. I'm aspiring to become a UI/UX designer.  <br>  </p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<div id="popup2" class="overlay">
+		<div class="popup">
+			<h2>Education Background</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+				<table>
+					<tr>
+						<td></td>
+						<td><img src="pic/6.png" width="20px"></td>
+						<td>Universiti Malaysia Pahang (UMP)<br>2019-2023</td>
+					</tr>
+					<tr>
+						<td>Kedah Matriculation<br>2018-2019</td>
+						<td><img src="pic/6.png" width="20px"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src="pic/6.png" width="20px"></td>
+						<td>Sekolah Menengah Kebangsaan Khir Johari<br>2013-2017</td>
+					</tr>
+					<tr>
+						<td>Sekolah Kebangsaan Hulu Bernam</td>
+						<td><img src="pic/6.png" width="20px"></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="clickme"><a href="#popup3">
+			<img src="pic/clickme.png" width="100px">
+		</div>
+		<div id="popup3" class="overlay">
+		<div class="popup">
+			<h2>SNAKEEEE</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+				<canvas id="gc" width="400" height="400"></canvas>
+					<script>
+					window.onload=function() {
+						canv=document.getElementById("gc");
+						ctx=canv.getContext("2d");
+						document.addEventListener("keydown",keyPush);
+						setInterval(game,1000/15);
+					}
+					px=py=10;
+					gs=tc=20;
+					ax=ay=15;
+					xv=yv=0;
+					trail=[];
+					tail = 5;
+					function game() {
+						px+=xv;
+						py+=yv;
+						if(px<0) {
+							px= tc-1;
+						}
+						if(px>tc-1) {
+							px= 0;
+						}
+						if(py<0) {
+							py= tc-1;
+						}
+						if(py>tc-1) {
+							py= 0;
+						}
+
+						ctx.fillStyle="white";
+						ctx.fillRect(0,0,canv.width,canv.height);
+
+						ctx.fillStyle="lime";
+						for(var i=0;i<trail.length;i++) {
+							ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+							if(trail[i].x==px && trail[i].y==py) {
+								tail = 5;
+							}
+						}
+						trail.push({x:px,y:py});
+						while(trail.length>tail) {
+						trail.shift();
+						}
+
+						if(ax==px && ay==py) {
+							tail++;
+							ax=Math.floor(Math.random()*tc);
+							ay=Math.floor(Math.random()*tc);
+						}
+						ctx.fillStyle="red";
+						ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+					}
+
+					function keyPush(evt) {
+						switch(evt.keyCode) {
+							case 37:
+								xv=-1;yv=0;
+								break;
+							case 38:
+								xv=0;yv=-1;
+								break;
+							case 39:
+								xv=1;yv=0;
+								break;
+							case 40:
+								xv=0;yv=1;
+								break;
+						}
+					}
+					</script>
+			</div>
+		</div>
+	</div>
+	<div id="popup4" class="overlay">
+		<div class="popup">
+			<h2>Project</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+				<div class="slideshow-container">
+					<div class="mySlides fade">
+						<div style="width: 100%;">
+			        <div style="width: 50%; height: 100px; float: left; padding-top: 100px;"> 
+			        	<img src="pic/vanG.png" style="width:100%">
+			        </div>
+			        
+			        <div style="margin-left: 50%; height: 300px;padding-top: 100px;"> 
+			            The is a galleria website. The purpose of the website is to display the current and past showing exhibition that had been held in the galleria. The user able to see the location, and see the current event that been held by the galleria. 
+			        </div>
+			    	</div>
+			  </div>
+
+			  <div class="mySlides fade">
+						<div style="width: 100%;">
+			        <div style="width: 50%; height: 100px; float: left;"> 
+			        	<img src="pic/FI.png" style="width:80%">
+			        	<img src="pic/UI.png" style="width:100%">
+			        </div>
+			        
+			        <div style="margin-left: 50%; height: 300px;padding-top: 100px;"> 
+			            The is a attendance system. The student attendance is record using the facial identification feature in the system. 
+			        </div>
+			    	</div>
+			  </div>
+
+			  <div class="mySlides fade">
+						<div style="width: 100%;">
+			        <div style="width: 50%; height: 100px; float: left; padding-top: 100px"> 
+			        	<img src="pic/snake.png" style="width:60%">
+			        </div>
+			        
+			        <div style="margin-left: 50%; height: 300px;padding-top: 100px;"> 
+			            This is a snake game and created purely by HTML. The player able to play the snake game and restart the game after colliding with the snake body.  
+			        </div>
+			    	</div>
+			  </div>
+
+			  <a class="prev" onclick="plusSlides(-1)">❮</a>
+				<a class="next" onclick="plusSlides(1)">❯</a>
+
+				</div>
+					<br>
+
+					<div style="text-align:center">
+					  <!-- <span class="dot" onclick="currentSlide(1)"></span>  -->
+					  <span class="dot" onclick="currentSlide(2)"></span> 
+					  <span class="dot" onclick="currentSlide(3)"></span> 
+					  <span class="dot" onclick="currentSlide(4)"></span> 
+
+					</div>
+
+					<!-- <div class="mySlides fade">
+					  <img src="vanG.png" style="width:100%">
+					</div>
+
+					<div class="mySlides fade">
+					  <img src="vanG2.png" style="width:100%">
+					</div>
+
+					<div class="mySlides fade">
+					  <img src="FI.png" style="width:80%">
+					</div>
+
+					<div class="mySlides fade">
+					  <img src="UI.png" style="width:100%">
+					</div>
+
+					<div class="mySlides fade">
+					  <img src="snake.png" style="width:60%">
+					</div>
+
+					<a class="prev" onclick="plusSlides(-1)">❮</a>
+					<a class="next" onclick="plusSlides(1)">❯</a>
+
+					</div>
+					<br>
+
+					<div style="text-align:center">
+					  <span class="dot" onclick="currentSlide(1)"></span> 
+					  <span class="dot" onclick="currentSlide(2)"></span> 
+					  <span class="dot" onclick="currentSlide(3)"></span> 
+					  <span class="dot" onclick="currentSlide(4)"></span> 
+					  <span class="dot" onclick="currentSlide(5)"></span> 
+					</div> -->
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+</body>
+</html>
